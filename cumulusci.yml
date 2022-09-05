@@ -1,0 +1,27 @@
+minimum_cumulusci_version: '3.64.0'
+project:
+    name: realestate
+    package:
+        name: realestate
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+    test:
+        name_match: '%Test'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/realestate/tests
+            options:
+                outputdir: robot/realestate/results
+
+    robot_testdoc:
+        options:
+            path: robot/realestate/tests
+            output: robot/realestate/doc/realestate_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
